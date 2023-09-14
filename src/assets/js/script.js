@@ -25,7 +25,52 @@ function getNewData() {
             content: "Limpar a casa",
             id: generatedId(),
             checked: false
-        }
+        },
+        {
+            content: "Fazer mudança",
+            id: generatedId(),
+            checked: false
+        },
+        {
+            content: "Lavar a louça",
+            id: generatedId(),
+            checked: false
+        },
+        {
+            content: "Limpar a casa",
+            id: generatedId(),
+            checked: false
+        },
+        {
+            content: "Fazer mudança",
+            id: generatedId(),
+            checked: false
+        },
+        {
+            content: "Lavar a louça",
+            id: generatedId(),
+            checked: false
+        },
+        {
+            content: "Limpar a casa",
+            id: generatedId(),
+            checked: false
+        },
+        {
+            content: "Fazer mudança",
+            id: generatedId(),
+            checked: false
+        },
+        {
+            content: "Lavar a louça",
+            id: generatedId(),
+            checked: false
+        },
+        {
+            content: "Limpar a casa",
+            id: generatedId(),
+            checked: false
+        },
     ];
 };
 
