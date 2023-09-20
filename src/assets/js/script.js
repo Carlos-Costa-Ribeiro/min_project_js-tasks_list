@@ -4,6 +4,12 @@ function generatedId() {
     return `${Date.now()}-${lastId}`;
 }
 
+function BuildData(textEl) {
+    this.content = textEl
+    this.id = generatedId()
+    this.checked = false
+}
+
 function getNewData() {
     let data = localStorage.getItem("tasks");
     data = JSON.parse(data);
@@ -112,11 +118,7 @@ let addBtn = document.querySelector(".addElement button");
 addBtn.addEventListener("click", addElement);
 function addElement() {
     let input = document.querySelector(".addElement input");
-    let newEle = {
-        content: `${input.value}`,
-        id: generatedId(),
-        checked: false
-    };
+    let newEle = new BuildData(input.value);
     arrayElements.push(newEle);
     addElementToDOM(newEle);
     input.value = "";
