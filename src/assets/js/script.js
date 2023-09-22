@@ -4,10 +4,12 @@ function generatedId() {
     return `${Date.now()}-${lastId}`;
 }
 
-function BuildData(textEl) {
-    this.content = textEl
-    this.id = generatedId()
-    this.checked = false
+class BuildData {
+    constructor(textEl) {
+        this.content = textEl
+        this.id = generatedId()
+        this.checked = false
+    }
 }
 
 function getNewData() {
@@ -118,6 +120,7 @@ let addBtn = document.querySelector(".addElement button");
 addBtn.addEventListener("click", addElement);
 function addElement() {
     let input = document.querySelector(".addElement input");
+    if(!input.value) return
     let newEle = new BuildData(input.value);
     arrayElements.push(newEle);
     addElementToDOM(newEle);
