@@ -1,14 +1,12 @@
-let lastId = 0;
-function generatedId() {
-    lastId++;
-    return `${Date.now()}-${lastId}`;
-}
-
 class BuildData {
     constructor(textEl) {
         this.content = textEl
-        this.id = generatedId()
+        this.id = BuildData.generateId()
         this.checked = false
+    }
+    
+    static generateId() {
+        return uuidv4();
     }
 }
 
@@ -21,62 +19,62 @@ function getNewData() {
     return data.length ? data : [
         {
             content: "Fazer mudança",
-            id: generatedId(),
+            id: BuildData.generateId(),
             checked: false
         },
         {
             content: "Lavar a louça",
-            id: generatedId(),
+            id: BuildData.generateId(),
             checked: false
         },
         {
             content: "Limpar a casa",
-            id: generatedId(),
+            id: BuildData.generateId(),
             checked: false
         },
         {
             content: "Fazer mudança",
-            id: generatedId(),
+            id: BuildData.generateId(),
             checked: false
         },
         {
             content: "Lavar a louça",
-            id: generatedId(),
+            id: BuildData.generateId(),
             checked: false
         },
         {
             content: "Limpar a casa",
-            id: generatedId(),
+            id: BuildData.generateId(),
             checked: false
         },
         {
             content: "Fazer mudança",
-            id: generatedId(),
+            id: BuildData.generateId(),
             checked: false
         },
         {
             content: "Lavar a louça",
-            id: generatedId(),
+            id: BuildData.generateId(),
             checked: false
         },
         {
             content: "Limpar a casa",
-            id: generatedId(),
+            id: BuildData.generateId(),
             checked: false
         },
         {
             content: "Fazer mudança",
-            id: generatedId(),
+            id: BuildData.generateId(),
             checked: false
         },
         {
             content: "Lavar a louça",
-            id: generatedId(),
+            id: BuildData.generateId(),
             checked: false
         },
         {
             content: "Limpar a casa",
-            id: generatedId(),
+            id: BuildData.generateId(),
             checked: false
         },
     ];
@@ -120,7 +118,7 @@ let addBtn = document.querySelector(".addElement button");
 addBtn.addEventListener("click", addElement);
 function addElement() {
     let input = document.querySelector(".addElement input");
-    if(!input.value) return
+    if (!input.value) return
     let newEle = new BuildData(input.value);
     arrayElements.push(newEle);
     addElementToDOM(newEle);
